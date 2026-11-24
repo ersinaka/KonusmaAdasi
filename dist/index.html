@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
@@ -12,14 +12,16 @@ html, body, #canvas {
 }
 
 body {
-	color: white;
-	background-color: black;
+	color: #333333;
+	background-color: #ffffff;
 	overflow: hidden;
 	touch-action: none;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 #canvas {
 	display: block;
+	background-color: #ffffff;
 }
 
 #canvas:focus {
@@ -38,7 +40,7 @@ body {
 }
 
 #status {
-	background-color: #242424;
+	background-color: #ffffff;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -47,9 +49,10 @@ body {
 }
 
 #status-splash {
-	max-height: 100%;
-	max-width: 100%;
+	max-height: 75%;
+	max-width: 75%;
 	margin: auto;
+	object-fit: contain;
 }
 
 #status-progress, #status-notice {
@@ -57,18 +60,40 @@ body {
 }
 
 #status-progress {
-	bottom: 10%;
-	width: 50%;
+	bottom: 12%;
+	width: 45%;
+	max-width: 320px;
+	height: 16px;
 	margin: 0 auto;
+	border-radius: 12px;
+	overflow: hidden;
+	border: 2px solid #81C784;
+	background-color: #E8F5E9;
+	accent-color: #4CAF50;
+}
+
+#status-progress::-webkit-progress-bar {
+	background-color: #E8F5E9;
+	border-radius: 10px;
+}
+
+#status-progress::-webkit-progress-value {
+	background-color: #4CAF50;
+	border-radius: 10px;
+}
+
+#status-progress::-moz-progress-bar {
+	background-color: #4CAF50;
+	border-radius: 10px;
 }
 
 #status-notice {
-	background-color: #5b3943;
-	border-radius: 0.5rem;
-	border: 1px solid #9b3943;
-	color: #e0e0e0;
+	background-color: #ffebee;
+	border-radius: 0.75rem;
+	border: 2px solid #ef5350;
+	color: #c62828;
 	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
-	line-height: 1.3;
+	line-height: 1.4;
 	margin: 0 2rem;
 	overflow: hidden;
 	padding: 1rem;
@@ -82,22 +107,22 @@ body {
 	</head>
 	<body>
 		<canvas id="canvas">
-			Your browser does not support the canvas tag.
+			Tarayıcınız canvas etiketini desteklemiyor.
 		</canvas>
 
 		<noscript>
-			Your browser does not support JavaScript.
+			Tarayıcınız JavaScript desteği gerektirmektedir.
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" src="index.png" alt="">
+			<img id="status-splash" src="index.png" alt="Konuşma Adası">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":3933552,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":4050528,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -142,7 +167,7 @@ const engine = new Engine(GODOT_CONFIG);
 		} else if (typeof err === 'string') {
 			setStatusNotice(err);
 		} else {
-			setStatusNotice('An unknown error occured');
+			setStatusNotice('Beklenmeyen bir hata oluştu');
 		}
 		setStatusMode('notice');
 		initializing = false;
@@ -154,7 +179,6 @@ const engine = new Engine(GODOT_CONFIG);
 
 	if (missing.length !== 0) {
 		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
-			// There's a chance that installing the service worker would fix the issue
 			Promise.race([
 				navigator.serviceWorker.getRegistration().then((registration) => {
 					if (registration != null) {
@@ -162,7 +186,6 @@ const engine = new Engine(GODOT_CONFIG);
 					}
 					return registration;
 				}).then(() => engine.installServiceWorker()),
-				// For some reason, `getRegistration()` can stall
 				new Promise((resolve) => {
 					setTimeout(() => resolve(), 2000);
 				}),
@@ -172,8 +195,7 @@ const engine = new Engine(GODOT_CONFIG);
 				window.location.reload();
 			});
 		} else {
-			// Display the message as usual
-			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
+			const missingMsg = 'Hata\nKonuşma Adası oyununu çalıştırmak için gerekli web özellikleri eksik:\n';
 			displayFailureNotice(missingMsg + missing.join('\n'));
 		}
 	} else {
