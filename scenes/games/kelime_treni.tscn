@@ -1,0 +1,181 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6g8q3p7v1x2n"]
+
+[ext_resource type="Script" path="res://scripts/games/kelime_treni.gd" id="1_tren"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_hece_denizi.svg" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/nav_bar.tscn" id="3_navbar"]
+[ext_resource type="Texture2D" path="res://assets/characters/toto.svg" id="4_toto"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_speaker.svg" id="5_speaker"]
+[ext_resource type="Texture2D" path="res://assets/objects/tren_lokomotif.svg" id="6_loko"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reward_dialog.tscn" id="7_reward"]
+
+[node name="KelimeTreni" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tren")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NavBar" parent="." instance=ExtResource("3_navbar")]
+layout_mode = 1
+
+[node name="TopSection" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 85.0
+offset_right = 400.0
+offset_bottom = 215.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TotoRect" type="TextureRect" parent="TopSection"]
+custom_minimum_size = Vector2(120, 130)
+layout_mode = 2
+texture = ExtResource("4_toto")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PromptBubble" type="PanelContainer" parent="TopSection"]
+custom_minimum_size = Vector2(460, 80)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Margin" type="MarginContainer" parent="TopSection/PromptBubble"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="HBox" type="HBoxContainer" parent="TopSection/PromptBubble/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PromptLabel" type="Label" parent="TopSection/PromptBubble/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.2, 0.25, 0.3, 1)
+theme_override_font_sizes/font_size = 22
+text = "Heceleri doğru sırayla trene dizelim!"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SpeakerBtn" type="TextureButton" parent="TopSection/PromptBubble/Margin/HBox"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("5_speaker")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="WordPreview" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -140.0
+offset_right = 200.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TargetImage" type="TextureRect" parent="WordPreview"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WordLabel" type="Label" parent="WordPreview"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.45, 0.7, 1)
+theme_override_font_sizes/font_size = 36
+text = "Araba"
+
+[node name="TrainArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -60.0
+offset_right = 450.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TrainContainer" type="HBoxContainer" parent="TrainArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Locomotive" type="TextureRect" parent="TrainArea/TrainContainer"]
+custom_minimum_size = Vector2(170, 130)
+layout_mode = 2
+texture = ExtResource("6_loko")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WagonSlots" type="HBoxContainer" parent="TrainArea/TrainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="PoolArea" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -170.0
+offset_right = 400.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="SyllablePool" type="HBoxContainer" parent="PoolArea"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ResetButton" type="Button" parent="PoolArea"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+text = "🔄 Baştan Diz"
+
+[node name="RewardDialog" parent="." instance=ExtResource("7_reward")]
+visible = false
+layout_mode = 1

@@ -1,0 +1,205 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv83kx7n032p1"]
+
+[ext_resource type="Script" path="res://scripts/main/main_menu.gd" id="1_main"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_main_menu.svg" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/characters/fino.svg" id="3_fino"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_star.svg" id="4_star"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_speaker.svg" id="5_speaker"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TopBar" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+
+[node name="StarContainer" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="StarIcon" type="TextureRect" parent="TopBar/StarContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("4_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StarsLabel" type="Label" parent="TopBar/StarContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.55, 0.1, 1)
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[node name="InfoButton" type="Button" parent="TopBar"]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 16
+text = "ℹ️ Terapist / Aile"
+
+[node name="Content" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -580.0
+offset_top = -260.0
+offset_right = 580.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="MascotContainer" type="CenterContainer" parent="Content"]
+custom_minimum_size = Vector2(360, 480)
+layout_mode = 2
+
+[node name="FinoMascot" type="TextureRect" parent="Content/MascotContainer"]
+custom_minimum_size = Vector2(320, 380)
+layout_mode = 2
+texture = ExtResource("3_fino")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Content/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.45, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 54
+text = "Konuşma Adası"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Content/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.4, 0.45, 1)
+theme_override_font_sizes/font_size = 22
+text = "2–8 Yaş Sevimli Dil ve Konuşma Macerası"
+horizontal_alignment = 1
+
+[node name="AgeContainer" type="HBoxContainer" parent="Content/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Age24Button" type="Button" parent="Content/VBox/AgeContainer"]
+custom_minimum_size = Vector2(190, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🌱 2–4 Yaş (Kolay)"
+
+[node name="Age58Button" type="Button" parent="Content/VBox/AgeContainer"]
+custom_minimum_size = Vector2(190, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🚀 5–8 Yaş (Gelişmiş)"
+
+[node name="PlayButton" type="Button" parent="Content/VBox"]
+custom_minimum_size = Vector2(340, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "▶  OYNA"
+
+[node name="VoiceHintButton" type="TextureButton" parent="Content/VBox"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_speaker")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="InfoDialog" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimOverlay" type="ColorRect" parent="InfoDialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.15, 0.2, 0.6)
+
+[node name="CenterContainer" type="CenterContainer" parent="InfoDialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="InfoDialog/CenterContainer"]
+custom_minimum_size = Vector2(640, 440)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="InfoDialog/CenterContainer/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="InfoTitle" type="Label" parent="InfoDialog/CenterContainer/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.5, 0.7, 1)
+theme_override_font_sizes/font_size = 26
+text = "Terapist ve Aile Bilgilendirmesi"
+horizontal_alignment = 1
+
+[node name="InfoText" type="RichTextLabel" parent="InfoDialog/CenterContainer/Panel/VBox"]
+custom_minimum_size = Vector2(0, 260)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[b]Konuşma Adası[/b], çocukların dil ve konuşma becerilerini keyifli ve güvenli bir ortamda desteklemek için tasarlanmıştır.
+
+• [b]Gizlilik ve Güvenlik:[/b] Oyun tamamen çevrimdışı (offline) çalışır. Hiçbir ses, veri veya kişisel bilgi internete yüklenmez.
+• [b]Klinik Puanlama Yoktur:[/b] Çocuklar konuşma seslerini kaydederken yapay zeka puanlaması veya tanı koyulmaz. Amaç stressiz, eğlenceli pratik yapmaktır.
+• [b]Terapist Değerlendirmesi:[/b] Çocuğun ses kayıtları cihazın yerel klasöründe saklanır. Terapistler bu kayıtları oyun akışının dışından güvenle dinleyebilir.
+• [b]Pozitif Geri Bildirim:[/b] Hatalı cevaplarda cezalandırma veya olumsuz ses yoktur; doğruyu bulana kadar sevgiyle teşvik edilir."
+
+[node name="CloseButton" type="Button" parent="InfoDialog/CenterContainer/Panel/VBox"]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+text = "Kapat"

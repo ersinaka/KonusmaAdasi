@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": "araba",
+      "word": "Araba",
+      "target_sound": "R",
+      "sound_position": "orta",
+      "image": "res://assets/objects/araba.svg",
+      "audio_word": "res://assets/audio/voice/kelime_araba.wav",
+      "audio_prompt": "res://assets/audio/voice/mimi_araba_sorusu.wav",
+      "question_text": "Hangisi araba?",
+      "category": "taşıt",
+      "distractors": ["armut", "balik", "elma"]
+    },
+    {
+      "id": "armut",
+      "word": "Armut",
+      "target_sound": "R",
+      "sound_position": "orta",
+      "image": "res://assets/objects/armut.svg",
+      "audio_word": "res://assets/audio/voice/kelime_armut.wav",
+      "audio_prompt": "res://assets/audio/voice/mimi_armut_sorusu.wav",
+      "question_text": "Hangisi armut?",
+      "category": "meyve",
+      "distractors": ["araba", "balik", "kedi"]
+    },
+    {
+      "id": "balik",
+      "word": "Balık",
+      "target_sound": "B",
+      "sound_position": "başta",
+      "image": "res://assets/objects/balik.svg",
+      "audio_word": "res://assets/audio/voice/kelime_balik.wav",
+      "audio_prompt": "res://assets/audio/voice/mimi_balik_sorusu.wav",
+      "question_text": "Hangisi balık?",
+      "category": "hayvan",
+      "distractors": ["elma", "top", "armut"]
+    },
+    {
+      "id": "elma",
+      "word": "Elma",
+      "target_sound": "L",
+      "sound_position": "orta",
+      "image": "res://assets/objects/elma.svg",
+      "audio_word": "res://assets/audio/voice/kelime_elma.wav",
+      "audio_prompt": "res://assets/audio/voice/mimi_elma_sorusu.wav",
+      "question_text": "Hangisi elma?",
+      "category": "meyve",
+      "distractors": ["araba", "top", "balik"]
+    },
+    {
+      "id": "kedi",
+      "word": "Kedi",
+      "target_sound": "K",
+      "sound_position": "başta",
+      "image": "res://assets/objects/kedi.svg",
+      "audio_word": "res://assets/audio/voice/kelime_kedi.wav",
+      "audio_prompt": "res://assets/audio/voice/mimi_kedi_sorusu.wav",
+      "question_text": "Hangisi kedi?",
+      "category": "hayvan",
+      "distractors": ["kopek", "balik", "araba"]
+    },
+    {
+      "id": "top",
+      "word": "Top",
+      "target_sound": "T",
+      "sound_position": "başta",
+      "image": "res://assets/objects/top.svg",
+      "audio_word": "res://assets/audio/voice/kelime_top.wav",
+      "audio_prompt": "res://assets/audio/voice/mimi_top_sorusu.wav",
+      "question_text": "Hangisi top?",
+      "category": "oyuncak",
+      "distractors": ["elma", "armut", "kedi"]
+    }
+  ]
+}

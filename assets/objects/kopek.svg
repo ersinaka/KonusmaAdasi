@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <!-- Kulaklar -->
+  <ellipse cx="38" cy="85" rx="16" ry="32" fill="#8D6E63" transform="rotate(15 38 85)"/>
+  <ellipse cx="142" cy="85" rx="16" ry="32" fill="#8D6E63" transform="rotate(-15 142 85)"/>
+  <!-- Kafa -->
+  <ellipse cx="90" cy="95" rx="55" ry="50" fill="#D7CCC8"/>
+  <ellipse cx="90" cy="115" rx="36" ry="26" fill="#FFFFFF"/>
+  <!-- Gözler -->
+  <ellipse cx="72" cy="88" rx="6" ry="9" fill="#3E2723"/>
+  <circle cx="74" cy="85" r="2.5" fill="#FFFFFF"/>
+  <ellipse cx="108" cy="88" rx="6" ry="9" fill="#3E2723"/>
+  <circle cx="110" cy="85" r="2.5" fill="#FFFFFF"/>
+  <!-- Burun & Dil -->
+  <ellipse cx="90" cy="112" rx="9" ry="7" fill="#3E2723"/>
+  <path d="M 90 120 Q 95 135 90 138 Q 85 135 90 120" fill="#FF8A80"/>
+</svg>

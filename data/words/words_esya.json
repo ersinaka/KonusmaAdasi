@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "id": "araba",
+      "name": "Kırmızı Araba",
+      "category": "taşıt",
+      "color": "kırmızı",
+      "image": "res://assets/objects/araba.svg",
+      "audio": "res://assets/audio/voice/kelime_araba.wav"
+    },
+    {
+      "id": "armut",
+      "name": "Yeşil Armut",
+      "category": "meyve",
+      "color": "yeşil",
+      "image": "res://assets/objects/armut.svg",
+      "audio": "res://assets/audio/voice/kelime_armut.wav"
+    },
+    {
+      "id": "elma",
+      "name": "Kırmızı Elma",
+      "category": "meyve",
+      "color": "kırmızı",
+      "image": "res://assets/objects/elma.svg",
+      "audio": "res://assets/audio/voice/kelime_elma.wav"
+    },
+    {
+      "id": "muz",
+      "name": "Sarı Muz",
+      "category": "meyve",
+      "color": "sarı",
+      "image": "res://assets/objects/muz.svg",
+      "audio": "res://assets/audio/voice/kelime_muz.wav"
+    },
+    {
+      "id": "top",
+      "name": "Renkli Top",
+      "category": "oyuncak",
+      "color": "mavi",
+      "image": "res://assets/objects/top.svg",
+      "audio": "res://assets/audio/voice/kelime_top.wav"
+    },
+    {
+      "id": "gemi",
+      "name": "Mavi Gemi",
+      "category": "taşıt",
+      "color": "mavi",
+      "image": "res://assets/objects/gemi.svg",
+      "audio": "res://assets/audio/voice/kelime_gemi.wav"
+    },
+    {
+      "id": "kedi",
+      "name": "Tatlı Kedi",
+      "category": "hayvan",
+      "color": "turuncu",
+      "image": "res://assets/objects/kedi.svg",
+      "audio": "res://assets/audio/voice/kelime_kedi.wav"
+    },
+    {
+      "id": "kopek",
+      "name": "Sevimli Köpek",
+      "category": "hayvan",
+      "color": "kahverengi",
+      "image": "res://assets/objects/kopek.svg",
+      "audio": "res://assets/audio/voice/kelime_kopek.wav"
+    }
+  ]
+}

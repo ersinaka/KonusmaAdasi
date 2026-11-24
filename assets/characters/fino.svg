@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" width="300" height="360">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#f27d52" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Kuyruk -->
+  <path d="M 200 230 C 260 210, 290 280, 250 320 C 220 340, 180 320, 180 290 Z" fill="#FF8A50" filter="url(#shadow)"/>
+  <path d="M 235 300 C 260 270, 275 300, 250 320 Z" fill="#FFF3E0"/>
+  <!-- Vücut -->
+  <ellipse cx="150" cy="260" rx="75" ry="85" fill="#FF8A50" filter="url(#shadow)"/>
+  <!-- Göbek (Krem) -->
+  <ellipse cx="150" cy="275" rx="48" ry="60" fill="#FFF8E1"/>
+  <!-- Kulaklar -->
+  <polygon points="90,130 50,40 120,90" fill="#FF8A50"/>
+  <polygon points="85,120 60,55 110,95" fill="#FFAB91"/>
+  <polygon points="210,130 250,40 180,90" fill="#FF8A50"/>
+  <polygon points="215,120 240,55 190,95" fill="#FFAB91"/>
+  <!-- Kafa -->
+  <ellipse cx="150" cy="150" rx="80" ry="65" fill="#FF8A50" filter="url(#shadow)"/>
+  <!-- Beyaz Yanaklar -->
+  <path d="M 70 160 C 70 195, 120 205, 150 180 C 180 205, 230 195, 230 160 C 210 130, 90 130, 70 160 Z" fill="#FFF8E1"/>
+  <!-- Sevimli Gözler -->
+  <ellipse cx="115" cy="140" rx="9" ry="12" fill="#2E3440"/>
+  <circle cx="118" cy="136" r="4" fill="#FFFFFF"/>
+  <ellipse cx="185" cy="140" rx="9" ry="12" fill="#2E3440"/>
+  <circle cx="188" cy="136" r="4" fill="#FFFFFF"/>
+  <!-- Pembe Yanak Allığı -->
+  <ellipse cx="95" cy="165" rx="14" ry="8" fill="#FFAB91" opacity="0.6"/>
+  <ellipse cx="205" cy="165" rx="14" ry="8" fill="#FFAB91" opacity="0.6"/>
+  <!-- Burun -->
+  <ellipse cx="150" cy="165" rx="8" ry="6" fill="#37474F"/>
+  <!-- Gülümseme -->
+  <path d="M 142 173 Q 150 180 158 173" stroke="#37474F" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- Kollar -->
+  <path d="M 85 240 Q 65 270 95 285" stroke="#FF8A50" stroke-width="22" stroke-linecap="round" fill="none"/>
+  <path d="M 215 240 Q 235 270 205 285" stroke="#FF8A50" stroke-width="22" stroke-linecap="round" fill="none"/>
+</svg>

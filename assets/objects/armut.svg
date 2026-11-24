@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" width="160" height="200">
+  <!-- Sap ve Yaprak -->
+  <path d="M 80 45 Q 90 20 105 15" stroke="#795548" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="98" cy="25" rx="14" ry="7" fill="#66BB6A" transform="rotate(-30 98 25)"/>
+  <!-- Armut Gövdesi -->
+  <path d="M 80 45 C 55 45, 50 85, 40 120 C 25 170, 65 190, 80 190 C 95 190, 135 170, 120 120 C 110 85, 105 45, 80 45 Z" fill="#D4E157"/>
+  <!-- Parlaklık -->
+  <ellipse cx="65" cy="120" rx="10" ry="25" fill="#EEFF41" opacity="0.6" transform="rotate(-15 65 120)"/>
+</svg>

@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "araba",
+      "word": "Araba",
+      "image": "res://assets/objects/araba.svg",
+      "audio_word": "res://assets/audio/voice/kelime_araba.wav",
+      "syllables": ["A", "RA", "BA"],
+      "syllable_audios": [
+        "res://assets/audio/voice/hece_a.wav",
+        "res://assets/audio/voice/hece_ra.wav",
+        "res://assets/audio/voice/hece_ba.wav"
+      ]
+    },
+    {
+      "id": "armut",
+      "word": "Armut",
+      "image": "res://assets/objects/armut.svg",
+      "audio_word": "res://assets/audio/voice/kelime_armut.wav",
+      "syllables": ["AR", "MUT"],
+      "syllable_audios": [
+        "res://assets/audio/voice/hece_ar.wav",
+        "res://assets/audio/voice/hece_mut.wav"
+      ]
+    },
+    {
+      "id": "balik",
+      "word": "Balık",
+      "image": "res://assets/objects/balik.svg",
+      "audio_word": "res://assets/audio/voice/kelime_balik.wav",
+      "syllables": ["BA", "LIK"],
+      "syllable_audios": [
+        "res://assets/audio/voice/hece_ba.wav",
+        "res://assets/audio/voice/hece_lik.wav"
+      ]
+    },
+    {
+      "id": "elma",
+      "word": "Elma",
+      "image": "res://assets/objects/elma.svg",
+      "audio_word": "res://assets/audio/voice/kelime_elma.wav",
+      "syllables": ["EL", "MA"],
+      "syllable_audios": [
+        "res://assets/audio/voice/hece_el.wav",
+        "res://assets/audio/voice/hece_ma.wav"
+      ]
+    },
+    {
+      "id": "kedi",
+      "word": "Kedi",
+      "image": "res://assets/objects/kedi.svg",
+      "audio_word": "res://assets/audio/voice/kelime_kedi.wav",
+      "syllables": ["KE", "Dİ"],
+      "syllable_audios": [
+        "res://assets/audio/voice/hece_ke.wav",
+        "res://assets/audio/voice/hece_di.wav"
+      ]
+    }
+  ]
+}

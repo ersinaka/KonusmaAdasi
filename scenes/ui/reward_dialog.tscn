@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvyw5g04j1qpm"]
+
+[ext_resource type="Script" path="res://scripts/ui/reward_dialog.gd" id="1_reward"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_star.svg" id="2_star"]
+
+[node name="RewardDialog" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_reward")
+
+[node name="DimOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.15, 0.2, 0.5)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(520, 360)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.45, 0.2, 1)
+theme_override_font_sizes/font_size = 38
+text = "Tebrikler! ⭐"
+horizontal_alignment = 1
+
+[node name="StarsContainer" type="HBoxContainer" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Star1" type="TextureRect" parent="CenterContainer/Panel/VBox/StarsContainer"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+pivot_offset = Vector2(36, 36)
+texture = ExtResource("2_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Star2" type="TextureRect" parent="CenterContainer/Panel/VBox/StarsContainer"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+pivot_offset = Vector2(44, 44)
+texture = ExtResource("2_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Star3" type="TextureRect" parent="CenterContainer/Panel/VBox/StarsContainer"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+pivot_offset = Vector2(36, 36)
+texture = ExtResource("2_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MessageLabel" type="Label" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.3, 0.35, 1)
+theme_override_font_sizes/font_size = 22
+text = "Harika bir iş çıkardın!"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="CenterContainer/Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(180, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Tekrar Oyna"
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(180, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Devam Et"

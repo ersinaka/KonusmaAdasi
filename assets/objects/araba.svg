@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="200" height="160">
+  <rect x="25" y="65" width="150" height="50" rx="18" fill="#EF5350"/>
+  <path d="M 50 65 L 75 25 L 130 25 L 155 65 Z" fill="#FF7043"/>
+  <!-- Pencereler -->
+  <polygon points="80,32 100,32 100,60 62,60" fill="#E0F7FA"/>
+  <polygon points="106,32 126,32 144,60 106,60" fill="#E0F7FA"/>
+  <!-- Farlar -->
+  <ellipse cx="170" cy="80" rx="6" ry="8" fill="#FFEE58"/>
+  <ellipse cx="30" cy="80" rx="4" ry="7" fill="#FFA726"/>
+  <!-- Tekerlekler -->
+  <circle cx="60" cy="115" r="22" fill="#37474F"/>
+  <circle cx="60" cy="115" r="10" fill="#ECEFF1"/>
+  <circle cx="140" cy="115" r="22" fill="#37474F"/>
+  <circle cx="140" cy="115" r="10" fill="#ECEFF1"/>
+</svg>

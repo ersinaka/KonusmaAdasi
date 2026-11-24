@@ -1,0 +1,54 @@
+{
+  "stories": [
+    {
+      "id": "tohum_ve_cicek",
+      "title": "Tohumun Çiçek Açması",
+      "prompt": "Çiçeğin büyüme hikayesini doğru sıraya diz!",
+      "cards": [
+        {
+          "order": 1,
+          "title": "Tohum Ekme",
+          "description": "Toprağa küçük bir tohum ekildi.",
+          "image": "res://assets/objects/elma.svg"
+        },
+        {
+          "order": 2,
+          "title": "Güneş ve Su",
+          "description": "Güneş açtı ve tohum sulandı.",
+          "image": "res://assets/objects/gunes.svg"
+        },
+        {
+          "order": 3,
+          "title": "Güzel Çiçek",
+          "description": "Rengarenk mis kokulu bir çiçek açtı!",
+          "image": "res://assets/objects/cicek.svg"
+        }
+      ]
+    },
+    {
+      "id": "mimi_meyve_sepeti",
+      "title": "Mimi'nin Meyve Sepeti",
+      "prompt": "Mimi'nin meyveleri toplama hikayesini sıraya koy!",
+      "cards": [
+        {
+          "order": 1,
+          "title": "Ağaçtan Toplama",
+          "description": "Mimi ağaçtan taze elmaları topladı.",
+          "image": "res://assets/objects/elma.svg"
+        },
+        {
+          "order": 2,
+          "title": "Sepete Koyma",
+          "description": "Muz ve armutları sepetine doldurdu.",
+          "image": "res://assets/objects/armut.svg"
+        },
+        {
+          "order": 3,
+          "title": "Arkadaşlarla Paylaşma",
+          "description": "Bütün meyveleri Fino ve Piko ile paylaştı.",
+          "image": "res://assets/objects/muz.svg"
+        }
+      ]
+    }
+  ]
+}

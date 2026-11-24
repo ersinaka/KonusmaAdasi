@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#E8F5E9"/>
+  <!-- Ağaçlar -->
+  <path d="M -20 720 L -20 450 Q 150 380 320 450 L 320 720 Z" fill="#C8E6C9"/>
+  <path d="M 280 720 L 280 430 Q 480 360 680 430 L 680 720 Z" fill="#A5D6A7"/>
+  <path d="M 640 720 L 640 460 Q 820 390 1000 460 L 1000 720 Z" fill="#C8E6C9"/>
+  <path d="M 950 720 L 950 420 Q 1120 350 1300 420 L 1300 720 Z" fill="#81C784"/>
+  <!-- Zemin Çimliği -->
+  <path d="M 0 540 Q 640 500 1280 540 L 1280 720 L 0 720 Z" fill="#81C784"/>
+</svg>

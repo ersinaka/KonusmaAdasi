@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#E1F5FE"/>
+  <path d="M 0 460 Q 320 430 640 460 T 1280 460 L 1280 720 L 0 720 Z" fill="#4FC3F7"/>
+  <path d="M 0 530 Q 320 500 640 530 T 1280 530 L 1280 720 L 0 720 Z" fill="#29B6F6"/>
+  <!-- Kumsal -->
+  <path d="M 0 620 Q 640 570 1280 620 L 1280 720 L 0 720 Z" fill="#FFE082"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <!-- Işınlar -->
+  <g stroke="#FFA726" stroke-width="6" stroke-linecap="round">
+    <line x1="80" y1="15" x2="80" y2="30"/>
+    <line x1="80" y1="130" x2="80" y2="145"/>
+    <line x1="15" y1="80" x2="30" y2="80"/>
+    <line x1="130" y1="80" x2="145" y2="80"/>
+    <line x1="34" y1="34" x2="45" y2="45"/>
+    <line x1="115" y1="115" x2="126" y2="126"/>
+    <line x1="34" y1="126" x2="45" y2="115"/>
+    <line x1="115" y1="45" x2="126" y2="34"/>
+  </g>
+  <!-- Daire -->
+  <circle cx="80" cy="80" r="42" fill="#FFCA28"/>
+  <!-- Sevimli Yüz -->
+  <ellipse cx="68" cy="74" rx="4" ry="6" fill="#5D4037"/>
+  <ellipse cx="92" cy="74" rx="4" ry="6" fill="#5D4037"/>
+  <path d="M 72 88 Q 80 96 88 88" stroke="#5D4037" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

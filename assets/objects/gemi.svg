@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 160" width="180" height="160">
+  <!-- Gövde -->
+  <path d="M 25 110 L 45 145 L 135 145 L 160 110 Z" fill="#EF5350"/>
+  <rect x="23" y="105" width="138" height="8" rx="4" fill="#FFFFFF"/>
+  <!-- Direk -->
+  <rect x="86" y="25" width="8" height="85" fill="#795548"/>
+  <!-- Yelkenler -->
+  <polygon points="98,30 148,88 98,88" fill="#42A5F5"/>
+  <polygon points="82,40 40,88 82,88" fill="#90CAF9"/>
+  <!-- Bayrak -->
+  <polygon points="94,25 112,18 94,12" fill="#FFD54F"/>
+</svg>

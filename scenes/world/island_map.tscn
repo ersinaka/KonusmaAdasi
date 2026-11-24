@@ -1,0 +1,274 @@
+[gd_scene load_steps=9 format=3 uid="uid://ci1o848h4x521"]
+
+[ext_resource type="Script" path="res://scripts/world/island_map.gd" id="1_map"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_island_map.svg" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/nav_bar.tscn" id="3_navbar"]
+[ext_resource type="Texture2D" path="res://assets/characters/mimi_avatar.svg" id="4_mimi"]
+[ext_resource type="Texture2D" path="res://assets/characters/piko_avatar.svg" id="5_piko"]
+[ext_resource type="Texture2D" path="res://assets/characters/toto_avatar.svg" id="6_toto"]
+[ext_resource type="Texture2D" path="res://assets/characters/fino_avatar.svg" id="7_fino"]
+[ext_resource type="Texture2D" path="res://assets/objects/top.svg" id="8_top"]
+
+[node name="IslandMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_map")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NavBar" parent="." instance=ExtResource("3_navbar")]
+layout_mode = 1
+
+[node name="MapGrid" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -220.0
+offset_right = 600.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="SesOrmaniCard" type="PanelContainer" parent="MapGrid"]
+custom_minimum_size = Vector2(225, 460)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MapGrid/SesOrmaniCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Avatar" type="TextureRect" parent="MapGrid/SesOrmaniCard/VBox"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+texture = ExtResource("4_mimi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RegionTitle" type="Label" parent="MapGrid/SesOrmaniCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.5, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = "Ses Ormanı"
+horizontal_alignment = 1
+
+[node name="GameTitle" type="Label" parent="MapGrid/SesOrmaniCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.35, 0.4, 1)
+theme_override_font_sizes/font_size = 15
+text = "Tavşana Yardım Et"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MapGrid/SesOrmaniCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.55, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "Hedef ses ve kelime bulma pratiği"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayButton" type="Button" parent="MapGrid/SesOrmaniCard"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Oyna 🌸"
+
+[node name="PapaganCard" type="PanelContainer" parent="MapGrid"]
+custom_minimum_size = Vector2(225, 460)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MapGrid/PapaganCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Avatar" type="TextureRect" parent="MapGrid/PapaganCard/VBox"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+texture = ExtResource("5_piko")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RegionTitle" type="Label" parent="MapGrid/PapaganCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.55, 0.5, 1)
+theme_override_font_sizes/font_size = 20
+text = "Kelime Köyü"
+horizontal_alignment = 1
+
+[node name="GameTitle" type="Label" parent="MapGrid/PapaganCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.35, 0.4, 1)
+theme_override_font_sizes/font_size = 15
+text = "Papağanı Konuştur"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MapGrid/PapaganCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.55, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "Piko ile net telaffuz ve eğlenceli tekrar"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayButton" type="Button" parent="MapGrid/PapaganCard"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Oyna 🦜"
+
+[node name="HeceDeniziCard" type="PanelContainer" parent="MapGrid"]
+custom_minimum_size = Vector2(225, 460)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MapGrid/HeceDeniziCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Avatar" type="TextureRect" parent="MapGrid/HeceDeniziCard/VBox"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+texture = ExtResource("6_toto")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RegionTitle" type="Label" parent="MapGrid/HeceDeniziCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.45, 0.75, 1)
+theme_override_font_sizes/font_size = 20
+text = "Hece Denizi"
+horizontal_alignment = 1
+
+[node name="GameTitle" type="Label" parent="MapGrid/HeceDeniziCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.35, 0.4, 1)
+theme_override_font_sizes/font_size = 15
+text = "Kelime Treni"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MapGrid/HeceDeniziCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.55, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "Heceleri vagonlara doğru sırayla diz"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayButton" type="Button" parent="MapGrid/HeceDeniziCard"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Oyna 🚂"
+
+[node name="KayipEsyalarCard" type="PanelContainer" parent="MapGrid"]
+custom_minimum_size = Vector2(225, 460)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MapGrid/KayipEsyalarCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Avatar" type="TextureRect" parent="MapGrid/KayipEsyalarCard/VBox"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+texture = ExtResource("8_top")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RegionTitle" type="Label" parent="MapGrid/KayipEsyalarCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.5, 0.1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Kelime Köyü"
+horizontal_alignment = 1
+
+[node name="GameTitle" type="Label" parent="MapGrid/KayipEsyalarCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.35, 0.4, 1)
+theme_override_font_sizes/font_size = 15
+text = "Kayıp Eşyalar"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MapGrid/KayipEsyalarCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.55, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "Renk ve kategorisine göre eşyaları bul"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayButton" type="Button" parent="MapGrid/KayipEsyalarCard"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Oyna 🔍"
+
+[node name="HikayeKalesiCard" type="PanelContainer" parent="MapGrid"]
+custom_minimum_size = Vector2(225, 460)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MapGrid/HikayeKalesiCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Avatar" type="TextureRect" parent="MapGrid/HikayeKalesiCard/VBox"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+texture = ExtResource("7_fino")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RegionTitle" type="Label" parent="MapGrid/HikayeKalesiCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.3, 0.7, 1)
+theme_override_font_sizes/font_size = 20
+text = "Hikâye Kalesi"
+horizontal_alignment = 1
+
+[node name="GameTitle" type="Label" parent="MapGrid/HikayeKalesiCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.35, 0.4, 1)
+theme_override_font_sizes/font_size = 15
+text = "Hikâyeyi Kurtar"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MapGrid/HikayeKalesiCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.55, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "Olayları sıraya diz ve masalını anlat"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayButton" type="Button" parent="MapGrid/HikayeKalesiCard"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Oyna 🏰"

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" width="300" height="360">
+  <!-- Kanat -->
+  <path d="M 80 200 C 60 250, 90 320, 150 320 C 130 280, 110 240, 110 200 Z" fill="#26A69A"/>
+  <!-- Vücut -->
+  <ellipse cx="160" cy="230" rx="70" ry="90" fill="#4DB6AC"/>
+  <ellipse cx="170" cy="245" rx="42" ry="65" fill="#FFF176"/>
+  <!-- Kafa ve İbik -->
+  <ellipse cx="160" cy="130" rx="60" ry="60" fill="#4DB6AC"/>
+  <path d="M 150 75 Q 160 30 180 50 Q 170 75 160 75" fill="#FF7043"/>
+  <path d="M 135 80 Q 140 45 155 60 Q 145 80 135 80" fill="#FFCA28"/>
+  <!-- Göz Çevresi Beyaz Halka -->
+  <circle cx="135" cy="120" r="22" fill="#FFFFFF"/>
+  <circle cx="135" cy="120" r="9" fill="#263238"/>
+  <circle cx="138" cy="116" r="3.5" fill="#FFFFFF"/>
+  <!-- Gaga -->
+  <path d="M 175 105 C 225 115, 230 155, 175 160 C 185 145, 185 125, 175 105 Z" fill="#FFA726"/>
+  <path d="M 175 135 C 205 135, 210 160, 175 155 Z" fill="#FB8C00"/>
+  <!-- Ayaklar -->
+  <path d="M 140 320 L 135 345 M 140 320 L 145 345" stroke="#FFA726" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 180 320 L 175 345 M 180 320 L 185 345" stroke="#FFA726" stroke-width="6" stroke-linecap="round"/>
+</svg>

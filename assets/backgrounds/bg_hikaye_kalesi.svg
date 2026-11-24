@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#EDE7F6"/>
+  <path d="M 0 540 Q 640 500 1280 540 L 1280 720 L 0 720 Z" fill="#B39DDB"/>
+  <!-- Kale Silüeti -->
+  <rect x="520" y="380" width="240" height="150" fill="#D1C4E9" rx="8"/>
+  <polygon points="510,380 550,300 590,380" fill="#7E57C2"/>
+  <polygon points="690,380 730,300 770,380" fill="#7E57C2"/>
+  <rect x="610" y="440" width="60" height="90" rx="30" fill="#5E35B1"/>
+</svg>

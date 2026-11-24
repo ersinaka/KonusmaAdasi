@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="200" height="160">
+  <!-- Vagon Gövdesi -->
+  <rect x="20" y="55" width="160" height="65" rx="14" fill="#66BB6A"/>
+  <rect x="30" y="65" width="140" height="45" rx="8" fill="#C8E6C9" opacity="0.6"/>
+  <!-- Bağlantı Demiri -->
+  <rect x="0" y="95" width="25" height="10" rx="4" fill="#78909C"/>
+  <rect x="175" y="95" width="25" height="10" rx="4" fill="#78909C"/>
+  <!-- Tekerlekler -->
+  <circle cx="60" cy="128" r="18" fill="#37474F"/>
+  <circle cx="60" cy="128" r="8" fill="#ECEFF1"/>
+  <circle cx="140" cy="128" r="18" fill="#37474F"/>
+  <circle cx="140" cy="128" r="8" fill="#ECEFF1"/>
+</svg>

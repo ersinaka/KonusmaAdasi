@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" width="300" height="360">
+  <!-- Kulaklar -->
+  <ellipse cx="110" cy="70" rx="22" ry="65" fill="#F8BBD0" transform="rotate(-8 110 70)"/>
+  <ellipse cx="110" cy="70" rx="12" ry="45" fill="#F48FB1" transform="rotate(-8 110 70)"/>
+  <ellipse cx="190" cy="70" rx="22" ry="65" fill="#F8BBD0" transform="rotate(8 190 70)"/>
+  <ellipse cx="190" cy="70" rx="12" ry="45" fill="#F48FB1" transform="rotate(8 190 70)"/>
+  <!-- Vücut -->
+  <ellipse cx="150" cy="270" rx="72" ry="80" fill="#F8BBD0"/>
+  <ellipse cx="150" cy="280" rx="46" ry="55" fill="#FFFFFF"/>
+  <!-- Kafa -->
+  <ellipse cx="150" cy="170" rx="75" ry="65" fill="#F8BBD0"/>
+  <ellipse cx="150" cy="180" rx="50" ry="45" fill="#FFFFFF"/>
+  <!-- Gözler -->
+  <ellipse cx="120" cy="160" rx="8" ry="11" fill="#4A148C"/>
+  <circle cx="122" cy="156" r="3.5" fill="#FFFFFF"/>
+  <ellipse cx="180" cy="160" rx="8" ry="11" fill="#4A148C"/>
+  <circle cx="182" cy="156" r="3.5" fill="#FFFFFF"/>
+  <!-- Yanaklar -->
+  <circle cx="102" cy="182" r="12" fill="#FF80AB" opacity="0.45"/>
+  <circle cx="198" cy="182" r="12" fill="#FF80AB" opacity="0.45"/>
+  <!-- Sevimli Burun ve Ağız -->
+  <polygon points="146,178 154,178 150,183" fill="#EC407A"/>
+  <path d="M 144 186 Q 150 192 156 186" stroke="#4A148C" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Sevimli Çiçek Tokası -->
+  <circle cx="95" cy="120" r="10" fill="#FFF59D"/>
+  <circle cx="95" cy="120" r="5" fill="#FFB74D"/>
+  <!-- Kollar & Havuç -->
+  <path d="M 90 250 Q 75 285 110 290" stroke="#F8BBD0" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <path d="M 210 250 Q 225 285 190 290" stroke="#F8BBD0" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <!-- Minik Havuç -->
+  <polygon points="150,265 165,305 140,295" fill="#FF7043"/>
+  <path d="M 148 266 Q 140 250 135 255 M 150 265 Q 152 248 156 250" stroke="#66BB6A" stroke-width="4" stroke-linecap="round"/>
+</svg>

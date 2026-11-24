@@ -1,0 +1,157 @@
+[gd_scene load_steps=6 format=3 uid="uid://df7w49v8n2c04"]
+
+[ext_resource type="Script" path="res://scripts/games/hikayeyi_kurtar.gd" id="1_hikaye"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_hikaye_kalesi.svg" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/nav_bar.tscn" id="3_navbar"]
+[ext_resource type="Texture2D" path="res://assets/characters/fino_avatar.svg" id="4_fino"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reward_dialog.tscn" id="5_reward"]
+
+[node name="HikayeyiKurtar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hikaye")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NavBar" parent="." instance=ExtResource("3_navbar")]
+layout_mode = 1
+
+[node name="TopSection" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 80.0
+offset_right = 400.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="FinoRect" type="TextureRect" parent="TopSection"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_fino")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PromptBubble" type="PanelContainer" parent="TopSection"]
+custom_minimum_size = Vector2(500, 75)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Margin" type="MarginContainer" parent="TopSection/PromptBubble"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="HBox" type="HBoxContainer" parent="TopSection/PromptBubble/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PromptLabel" type="Label" parent="TopSection/PromptBubble/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.2, 0.25, 0.3, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tohumun Çiçek Açması: Olayları sıraya diz!"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SpeakerBtn" type="TextureButton" parent="TopSection/PromptBubble/Margin/HBox"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+size_flags_vertical = 4
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StoryBoard" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -170.0
+offset_right = 480.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="SlotsContainer" type="HBoxContainer" parent="StoryBoard"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="CardPoolContainer" type="HBoxContainer" parent="StoryBoard"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ResetButton" type="Button" parent="StoryBoard"]
+custom_minimum_size = Vector2(160, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 17
+text = "🔄 Baştan Sırala"
+
+[node name="StorytellingPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="StorytellingPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Controls" type="HBoxContainer" parent="StorytellingPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="ListenStoryBtn" type="Button" parent="StorytellingPanel/VBox/Controls"]
+custom_minimum_size = Vector2(240, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "📖 Masalı Dinle"
+
+[node name="NextStoryBtn" type="Button" parent="StorytellingPanel/VBox/Controls"]
+custom_minimum_size = Vector2(180, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "⭐ Devam Et"
+
+[node name="RewardDialog" parent="." instance=ExtResource("5_reward")]
+visible = false
+layout_mode = 1

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <!-- Kulaklar -->
+  <polygon points="50,70 35,25 80,45" fill="#FFA726"/>
+  <polygon points="48,65 40,35 72,50" fill="#FFCCBC"/>
+  <polygon points="130,70 145,25 100,45" fill="#FFA726"/>
+  <polygon points="132,65 140,35 108,50" fill="#FFCCBC"/>
+  <!-- Kafa -->
+  <ellipse cx="90" cy="95" rx="58" ry="50" fill="#FFA726"/>
+  <ellipse cx="90" cy="115" rx="35" ry="25" fill="#FFF3E0"/>
+  <!-- Gözler -->
+  <ellipse cx="70" cy="90" rx="7" ry="10" fill="#2E7D32"/>
+  <ellipse cx="70" cy="90" rx="3" ry="8" fill="#1B5E20"/>
+  <ellipse cx="110" cy="90" rx="7" ry="10" fill="#2E7D32"/>
+  <ellipse cx="110" cy="90" rx="3" ry="8" fill="#1B5E20"/>
+  <!-- Burun & Bıyıklar -->
+  <polygon points="86,108 94,108 90,113" fill="#E91E63"/>
+  <path d="M 50 108 L 25 105 M 50 115 L 28 120" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 130 108 L 155 105 M 130 115 L 152 120" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

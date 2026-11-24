@@ -1,0 +1,178 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmc8j43y6v7n1"]
+
+[ext_resource type="Script" path="res://scripts/games/papagani_konustur.gd" id="1_papagan"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_kelime_koyu.svg" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/nav_bar.tscn" id="3_navbar"]
+[ext_resource type="Texture2D" path="res://assets/characters/piko.svg" id="4_piko"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_speaker.svg" id="5_speaker"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reward_dialog.tscn" id="6_reward"]
+
+[node name="PapaganiKonustur" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_papagan")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NavBar" parent="." instance=ExtResource("3_navbar")]
+layout_mode = 1
+
+[node name="TopSection" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 90.0
+offset_right = 400.0
+offset_bottom = 240.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PikoRect" type="TextureRect" parent="TopSection"]
+custom_minimum_size = Vector2(130, 150)
+layout_mode = 2
+texture = ExtResource("4_piko")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PromptBubble" type="PanelContainer" parent="TopSection"]
+custom_minimum_size = Vector2(460, 90)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Margin" type="MarginContainer" parent="TopSection/PromptBubble"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="HBox" type="HBoxContainer" parent="TopSection/PromptBubble/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PromptLabel" type="Label" parent="TopSection/PromptBubble/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.2, 0.25, 0.3, 1)
+theme_override_font_sizes/font_size = 22
+text = "Piko'yu dinle: \"Araba\""
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SpeakerBtn" type="TextureButton" parent="TopSection/PromptBubble/Margin/HBox"]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("5_speaker")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CenterContent" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WordCard" type="PanelContainer" parent="CenterContent"]
+custom_minimum_size = Vector2(280, 240)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="CenterContent/WordCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CenterContent/WordCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="WordImage" type="TextureRect" parent="CenterContent/WordCard/Margin/VBox"]
+custom_minimum_size = Vector2(150, 140)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WordLabel" type="Label" parent="CenterContent/WordCard/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.45, 0.4, 1)
+theme_override_font_sizes/font_size = 32
+text = "Araba"
+horizontal_alignment = 1
+
+[node name="ControlsPanel" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -180.0
+offset_right = 380.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="StatusLabel" type="Label" parent="ControlsPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.5, 0.45, 1)
+theme_override_font_sizes/font_size = 20
+text = "Piko kelimeyi söylüyor, dikkatlice dinle!"
+horizontal_alignment = 1
+
+[node name="ActionBox" type="HBoxContainer" parent="ControlsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="ListenAgainBtn" type="Button" parent="ControlsPanel/ActionBox"]
+custom_minimum_size = Vector2(210, 62)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🔊 Tekrar Dinle"
+
+[node name="RepeatOutLoudBtn" type="Button" parent="ControlsPanel/ActionBox"]
+custom_minimum_size = Vector2(240, 62)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🦜 Söyledim / Tekrar Ettim!"
+
+[node name="NextWordBtn" type="Button" parent="ControlsPanel/ActionBox"]
+custom_minimum_size = Vector2(180, 62)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "⭐ Devam Et"
+
+[node name="RewardDialog" parent="." instance=ExtResource("6_reward")]
+visible = false
+layout_mode = 1

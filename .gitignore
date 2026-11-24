@@ -1,0 +1,16 @@
+# Godot 4 specific ignores
+.godot/
+*.translation
+
+# Private API keys and secrets
+.env
+*.key
+
+# Temporary and build artifacts
+*.tmp
+*.tmp.mp3
+/tmp/
+
+# OS specific
+.DS_Store
+Thumbs.db

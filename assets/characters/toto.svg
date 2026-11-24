@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" width="300" height="360">
+  <!-- Kabuk (Arka) -->
+  <ellipse cx="150" cy="220" rx="95" ry="90" fill="#81C784"/>
+  <ellipse cx="150" cy="220" rx="80" ry="75" fill="#66BB6A"/>
+  <!-- Kabuk Desenleri -->
+  <polygon points="150,170 180,195 180,235 150,260 120,235 120,195" fill="#A5D6A7"/>
+  <polygon points="150,150 180,170 120,170" fill="#C8E6C9"/>
+  <!-- Ayaklar -->
+  <ellipse cx="70" cy="270" rx="28" ry="18" fill="#81C784"/>
+  <ellipse cx="230" cy="270" rx="28" ry="18" fill="#81C784"/>
+  <!-- Kafa ve Sevimli Denizci Şapkası -->
+  <ellipse cx="150" cy="115" rx="48" ry="42" fill="#A5D6A7"/>
+  <!-- Denizci Şapkası -->
+  <ellipse cx="150" cy="82" rx="36" ry="12" fill="#FFFFFF"/>
+  <path d="M 125 82 C 125 60, 175 60, 175 82 Z" fill="#42A5F5"/>
+  <circle cx="150" cy="62" r="5" fill="#EF5350"/>
+  <!-- Gözler -->
+  <ellipse cx="132" cy="110" rx="6" ry="9" fill="#2E3440"/>
+  <circle cx="134" cy="107" r="2.5" fill="#FFFFFF"/>
+  <ellipse cx="168" cy="110" rx="6" ry="9" fill="#2E3440"/>
+  <circle cx="170" cy="107" r="2.5" fill="#FFFFFF"/>
+  <!-- Yanaklar ve Bilge Gülümseme -->
+  <ellipse cx="118" cy="125" rx="8" ry="5" fill="#EF9A9A" opacity="0.5"/>
+  <ellipse cx="182" cy="125" rx="8" ry="5" fill="#EF9A9A" opacity="0.5"/>
+  <path d="M 140 128 Q 150 136 160 128" stroke="#2E3440" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
