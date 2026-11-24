@@ -18,9 +18,10 @@ ENV_FILE = os.path.join(PROJECT_DIR, ".env")
 OUTPUT_VOICE_DIR = os.path.join(PROJECT_DIR, "assets/audio/voice")
 
 # Kullanıcının belirttiği özel ses: Ezgi - Cute (XjxV2uE0ZjxxzwMtx4Zx)
-# Free tier kütüphane kısıtlamasında otomatik olarak en sıcak, sakin ve sevecen Sarah sesine geçer.
+# Free tier kütüphane kısıtlamasında (HTTP 402) asla yabancı aksanlı sese düşmez;
+# %100 yerel Türkçe Emel Neural sesine geçer.
 USER_VOICE_ID = "XjxV2uE0ZjxxzwMtx4Zx"
-FALLBACK_WARM_VOICE = "EXAVITQu4vr4xnSDxMaL" # Sarah - sakin, şefkatli, tane tane
+FALLBACK_TURKISH_VOICE = "tr-TR-EmelNeural"
 
 VOICE_MAP = {
     "mimi": USER_VOICE_ID,
@@ -154,53 +155,51 @@ def synthesize_speech(text, voice_id, output_wav_path, api_key):
         }
     }
     
-    target_vids = [voice_id]
-    if voice_id != FALLBACK_WARM_VOICE:
-        target_vids.append(FALLBACK_WARM_VOICE)
-
     temp_mp3 = output_wav_path + ".tmp.mp3"
-    
-    for vid in target_vids:
-        url = f"https://api.elevenlabs.io/v1/text-to-speech/{vid}"
-        headers = {
-            "xi-api-key": api_key,
-            "Content-Type": "application/json",
-            "Accept": "audio/mpeg"
-        }
-        data = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
+    headers = {
+        "xi-api-key": api_key,
+        "Content-Type": "application/json",
+        "Accept": "audio/mpeg"
+    }
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
 
-        try:
-            with urllib.request.urlopen(req) as resp:
-                with open(temp_mp3, "wb") as f:
-                    f.write(resp.read())
+    try:
+        with urllib.request.urlopen(req) as resp:
+            with open(temp_mp3, "wb") as f:
+                f.write(resp.read())
 
-            # FFmpeg ile Godot'nun en temiz okuduğu 22050Hz 16-bit Mono WAV formatına çevir
-            cmd = [
-                "ffmpeg", "-y", "-i", temp_mp3,
-                "-ar", "22050", "-ac", "1", output_wav_path
-            ]
-            subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
-            if os.path.exists(temp_mp3):
-                os.remove(temp_mp3)
-            return True
-        except urllib.error.HTTPError as e:
-            err_msg = e.read().decode("utf-8")
-            if vid != target_vids[-1]:
-                print(f"ℹ️ Ses kimliği '{vid}' için kütüphane kısıtı ({e.code}), sakin ve şefkatli Sarah sesine geçiliyor...")
-                continue
-            else:
-                print(f"❌ ElevenLabs TTS Hatası ({e.code}) '{text}': {err_msg}")
-                if os.path.exists(temp_mp3):
-                    os.remove(temp_mp3)
-                return False
-        except Exception as e:
-            print(f"❌ TTS Dönüştürme Hatası: {e}")
-            if os.path.exists(temp_mp3):
-                os.remove(temp_mp3)
-            return False
-
-    return False
+        cmd = [
+            "ffmpeg", "-y", "-i", temp_mp3,
+            "-ar", "22050", "-ac", "1", output_wav_path
+        ]
+        subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+        if os.path.exists(temp_mp3):
+            os.remove(temp_mp3)
+        return True
+    except urllib.error.HTTPError as e:
+        err_msg = e.read().decode("utf-8")
+        print(f"ℹ️ ElevenLabs API uyarısı ({e.code}): {err_msg}")
+        print(f"🔄 %100 Doğal Türkçe Yerel Neural seslendirmeye geçiliyor ({FALLBACK_TURKISH_VOICE})...")
+        import asyncio, edge_tts
+        async def fallback_edge():
+            comm = edge_tts.Communicate(text, voice=FALLBACK_TURKISH_VOICE, rate="-15%", pitch="+2Hz")
+            await comm.save(temp_mp3)
+        asyncio.run(fallback_edge())
+        cmd = [
+            "ffmpeg", "-y", "-i", temp_mp3,
+            "-ar", "22050", "-ac", "1", output_wav_path
+        ]
+        subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+        if os.path.exists(temp_mp3):
+            os.remove(temp_mp3)
+        return True
+    except Exception as e:
+        print(f"❌ TTS Dönüştürme Hatası: {e}")
+        if os.path.exists(temp_mp3):
+            os.remove(temp_mp3)
+        return False
 
 def main():
     parser = argparse.ArgumentParser(description="Konuşma Adası ElevenLabs TTS Yöneticisi")
