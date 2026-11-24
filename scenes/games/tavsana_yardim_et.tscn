@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" path="res://assets/characters/mimi.svg" id="4_mimi"]
 [ext_resource type="Texture2D" path="res://assets/ui/icon_speaker.svg" id="5_speaker"]
 [ext_resource type="PackedScene" path="res://scenes/ui/reward_dialog.tscn" id="6_reward"]
+[ext_resource type="PackedScene" path="res://scenes/ui/success_overlay.tscn" id="7_success"]
 
 [node name="TavsanaYardimEt" type="Control"]
 layout_mode = 3
@@ -101,4 +102,7 @@ alignment = 1
 
 [node name="RewardDialog" parent="." instance=ExtResource("6_reward")]
 visible = false
+layout_mode = 1
+
+[node name="SuccessOverlay" parent="." instance=ExtResource("7_success")]
 layout_mode = 1

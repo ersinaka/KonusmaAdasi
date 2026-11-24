@@ -120,9 +120,16 @@ func _get_or_load_voice(path: String) -> AudioStream:
 	return null
 
 ## Çocuk oyunu için dinamik tatlı synth sesleri (dosya olmadığında bile çalışır)
+func play_sweet_bong() -> void:
+	# İnce, tatlı, huzur verici kristal çan sesi (otizmli çocuklar için rahatlatıcı ve belirgin)
+	var stream = _get_or_load_sfx("res://assets/audio/sfx/sweet_bong.wav")
+	if stream:
+		play_sfx(stream)
+	else:
+		_play_procedural_tone(587.33, 0.45, 0.4)
+
 func play_gentle_bell() -> void:
-	# 880Hz tatlı onay tonu
-	_play_procedural_tone(880.0, 0.25, 0.3)
+	play_sweet_bong()
 
 func play_success_jingle() -> void:
 	_play_procedural_chime([523.25, 659.25, 783.99, 1046.50]) # C5, E5, G5, C6

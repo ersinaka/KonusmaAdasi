@@ -11,6 +11,7 @@ const CARD_SCENE = preload("res://scenes/ui/picture_card.tscn")
 @onready var repeat_audio_btn: TextureButton = $TopSection/PromptBubble/Margin/HBox/SpeakerBtn
 @onready var items_grid: GridContainer = $CenterContent/ItemsGrid
 @onready var reward_dialog: Control = $RewardDialog
+@onready var success_overlay: Control = $SuccessOverlay
 
 var all_items: Array = []
 var current_index: int = 0
@@ -111,7 +112,8 @@ func _on_item_clicked(clicked_item: Dictionary, card_node: Control) -> void:
 		# DOĞRU EŞYA
 		is_processing = true
 		card_node.play_correct_animation()
-		AudioManager.play_gentle_bell()
+		if success_overlay:
+			success_overlay.popup_success("Buldun! 🔍")
 
 		var audio_path = clicked_item.get("audio", "")
 		AudioManager.play_voice(audio_path, func():

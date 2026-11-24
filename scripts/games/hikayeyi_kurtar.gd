@@ -21,6 +21,7 @@ const CARD_SCENE = preload("res://scenes/ui/picture_card.tscn")
 @onready var next_story_btn: Button = $StorytellingPanel/VBox/Controls/NextStoryBtn
 
 @onready var reward_dialog: Control = $RewardDialog
+@onready var success_overlay: Control = $SuccessOverlay
 
 var stories_data: Array = []
 var current_story_index: int = 0
@@ -135,7 +136,8 @@ func _on_pool_card_clicked(card_data: Dictionary, card_node: Control) -> void:
 		# DOĞRU SIRALAMA
 		placed_cards.append(card_data)
 		card_node.visible = false
-		AudioManager.play_gentle_bell()
+		if success_overlay:
+			success_overlay.popup_success("Doğru Adım! ⭐")
 
 		var slot = slots_container.get_child(current_step - 1)
 		var holder = slot.find_child("SlotHolder", true, false)

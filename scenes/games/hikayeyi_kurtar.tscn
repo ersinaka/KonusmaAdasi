@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" path="res://scenes/ui/nav_bar.tscn" id="3_navbar"]
 [ext_resource type="Texture2D" path="res://assets/characters/fino_avatar.svg" id="4_fino"]
 [ext_resource type="PackedScene" path="res://scenes/ui/reward_dialog.tscn" id="5_reward"]
+[ext_resource type="PackedScene" path="res://scenes/ui/success_overlay.tscn" id="6_success"]
 
 [node name="HikayeyiKurtar" type="Control"]
 layout_mode = 3
@@ -154,4 +155,7 @@ text = "⭐ Devam Et"
 
 [node name="RewardDialog" parent="." instance=ExtResource("5_reward")]
 visible = false
+layout_mode = 1
+
+[node name="SuccessOverlay" parent="." instance=ExtResource("6_success")]
 layout_mode = 1

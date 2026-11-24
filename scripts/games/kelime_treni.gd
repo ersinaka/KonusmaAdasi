@@ -18,6 +18,7 @@ extends Control
 
 @onready var reset_button: Button = $PoolArea/ResetButton
 @onready var reward_dialog: Control = $RewardDialog
+@onready var success_overlay: Control = $SuccessOverlay
 
 var word_items: Array = []
 var current_index: int = 0
@@ -166,7 +167,8 @@ func _on_syllable_selected(syl: String, btn: Button) -> void:
 		# DOĞRU HECE
 		current_placed_syllables.append(syl)
 		btn.visible = false
-		AudioManager.play_gentle_bell()
+		if success_overlay:
+			success_overlay.popup_success("Harika! 🚂")
 
 		# Vagon kutusuna yerleştir
 		var wagon = wagon_slots_container.get_child(current_slot_index)

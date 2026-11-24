@@ -18,6 +18,7 @@ extends Control
 @onready var status_label: Label = $ControlsPanel/StatusLabel
 
 @onready var reward_dialog: Control = $RewardDialog
+@onready var success_overlay: Control = $SuccessOverlay
 
 var word_items: Array = []
 var current_index: int = 0
@@ -89,7 +90,8 @@ func _on_repeat_out_loud_pressed() -> void:
 	AudioManager.play_tap_sound()
 	_animate_piko()
 	status_label.text = "Harika söylüyorsun! Bravo sana!"
-	AudioManager.play_gentle_bell()
+	if success_overlay:
+		success_overlay.popup_success("Aferin! 🦜")
 	AudioManager.play_voice("res://assets/audio/voice/harika.wav", func():
 		AudioManager.play_voice("res://assets/audio/voice/aferin.wav")
 	)

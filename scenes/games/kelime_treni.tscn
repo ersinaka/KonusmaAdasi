@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" path="res://assets/ui/icon_speaker.svg" id="5_speaker"]
 [ext_resource type="Texture2D" path="res://assets/objects/tren_lokomotif.svg" id="6_loko"]
 [ext_resource type="PackedScene" path="res://scenes/ui/reward_dialog.tscn" id="7_reward"]
+[ext_resource type="PackedScene" path="res://scenes/ui/success_overlay.tscn" id="8_success"]
 
 [node name="KelimeTreni" type="Control"]
 layout_mode = 3
@@ -178,4 +179,7 @@ text = "🔄 Baştan Diz"
 
 [node name="RewardDialog" parent="." instance=ExtResource("7_reward")]
 visible = false
+layout_mode = 1
+
+[node name="SuccessOverlay" parent="." instance=ExtResource("8_success")]
 layout_mode = 1

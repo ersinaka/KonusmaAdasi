@@ -12,6 +12,7 @@ const CARD_SCENE = preload("res://scenes/ui/picture_card.tscn")
 @onready var prompt_speaker_btn: TextureButton = $MascotContainer/PromptBubble/Margin/HBox/SpeakerBtn
 @onready var cards_container: HBoxContainer = $CardsContainer
 @onready var reward_dialog: Control = $RewardDialog
+@onready var success_overlay: Control = $SuccessOverlay
 
 var word_items: Array = []
 var current_round_index: int = 0
@@ -148,8 +149,11 @@ func _on_card_clicked(clicked_id: String) -> void:
 		if target_card:
 			target_card.play_correct_animation()
 		
+		# Otizmli çocuklar için belirgin yeşil tick ve tatlı bong sesi
+		if success_overlay:
+			success_overlay.popup_success("Aferin! ⭐")
+		
 		_mimi_celebrate()
-		AudioManager.play_gentle_bell()
 		
 		# Kelime telaffuzu ve ardından övgü sesi
 		var word_audio = current_target_item.get("audio_word", "")
